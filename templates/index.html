@@ -1,4 +1,13 @@
 { % extends "base_generic.html" %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+{% endblock %}
+
 {% block content %}
 <div class="vertical-spacer"></div>
 
@@ -39,4 +48,8 @@
 </div>
 
 <div class="vertical-spacer"></div>
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
 {% endblock %}
