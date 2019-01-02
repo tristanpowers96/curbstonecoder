@@ -193,6 +193,8 @@ body .nav {
 }
 
 #info img {
+    position: absolute;
+    bottom: 0;
     height: 100px;
     width: auto;
     margin: 10px;
