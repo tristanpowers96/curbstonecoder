@@ -2,7 +2,6 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  {% block head %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Curbstone Coder</title>
@@ -11,10 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Alegreya|Orbitron|Exo" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-{% endblock %}
 </head>
 <body onload="fadein()" onscroll="floatHeader()">
-    {% block header %}
+
     <div class="container-fluid" id="header">
             <img id="logo" src="{{ url_for('static', filename='images/logo8.png') }}" />
             <div class="tabs">
@@ -40,12 +38,13 @@
                 <a class="tab" href="#">Blog</a>
             </div>
         </div>
-        {% endblock %}
-    {% block content %}
+
     <div class="container-fluid" id="jumbo-header">
         <img id="backdrop" src="https://dictionary.cambridge.org/images/thumb/black_noun_002_03536.jpg?version=4.0.64">
         <h1 id="title">Website design, &nbsp; &nbsp; &nbsp;<br><br> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;made simple</h1>
     </div>
+    <div class="content">
+      {% block content %}
       <div class="vertical-spacer"></div>
 
       <div class="container-fluid" id="info">
@@ -86,7 +85,7 @@
 
       <div class="vertical-spacer"></div>
       {% endblock %}
-    {% block footer %}
+  </div>
     <div id="footer">
         <div class="group">
             <h5>Contact us</h5>
@@ -103,7 +102,7 @@
         <span>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></span>
         <span>Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></span>
     </div>
-    {% endblock %}
+
         <script>
 
             function fadein() {
