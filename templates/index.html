@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Curbstone Coder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='universal.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Lato|Alegreya|Orbitron|Exo" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body onload="fadein()" onscroll="floatHeader()">
+    
+    <div class="container-fluid" id="header">
+            <img id="logo" src="{{ url_for('static', filename='images/logo7.png') }}" />
+            <div class="tabs">
+                <a class="tab" href="#">Home</a>
+                <a class="tab" href="#">Services
+                    <div class="content-box" >
+                        <a class="tab-item" href="#">Static websites</a> <br>
+                        <a class="tab-item" href="#">Dynamic websites</a> <br>
+                        <a class="tab-item" href="#">Responsive display</a>
+                    </div> 
+                </a>
+                <a class="tab" href="#">Prices</a>
+                    <div class="content-box">
+                        <a class="tab-item" href="#">General pricing</a> <br>
+                        <a class="tab-item" href="#">Get a quote</a>
+                    </div>
+                <a class="tab" href="#">Contact</a>
+                    <div class="content-box">
+                        <a class="tab-item" href="#">Email</a> <br>
+                        <a class="tab-item" href="#">Phone</a> <br>
+                        <a class="tab-item" href="#">Social media</a>
+                    </div>
+                <a class="tab" href="#">Blog</a>
+            </div>
+        </div>
+
+    <div class="container-fluid" id="jumbo-header">
+        <img id="backdrop" src="https://dictionary.cambridge.org/images/thumb/black_noun_002_03536.jpg?version=4.0.64">
+        <h1 id="title">Website design, &nbsp; &nbsp; &nbsp;<br><br> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;made simple</h1>
+    </div>
+    
+    <div class="vertical-spacer"></div>
+    
+    <div class="container-fluid" id="info">
+            
+            <h2>What we do</h2>
+            <div class="row">
+                <div class="well well-lg">
+                    <h3>Custom Design</h3>
+                    <img style="float:left" src="{{ url_for('static', filename='images/browser_5.png') }}">
+                    <img src="{{ url_for('static', filename='images/browser.png') }}">
+                    <img src="{{ url_for('static', filename='images/browser_1.png') }}">
+                    <img src="{{ url_for('static', filename='images/browser_2.png') }}">
+                    <p>The website you want, how you want. No website builder templates used,<br> only custom from scratch. Show people exactly what you want them to see.<br> </p>
+                    <a href="#">Learn more &darr;</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="well well-lg">
+                    <h3>Responsive Layout</h3>
+                    <img style="float:left" src="{{ url_for('static', filename='images/screen.png') }}">
+                    <img src="{{ url_for('static', filename='images/monitor.png') }}">
+                    <img src="{{ url_for('static', filename='images/smartphones.png') }}">
+                    <img src="{{ url_for('static', filename='images/laptop.png') }}">
+                    <p>Have a website that grabs the attention of your customers, gives you a <br> professional appearance, and caters to mobile displays.</p>
+                    <a href="#">Learn more &darr;</a>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="well well-lg">
+                    <h3>Maintenance</h3>
+                    <img src="{{ url_for('static', filename='images/maintenance.png') }}">
+                    <p>The website you want, how you want. No website builder templates used,<br> only custom from scratch. Show people exactly what you want them to see.</p>
+                    <a href="#">Learn more &darr;</a>
+                </div>
+            </div>
+  
+    </div>
+    
+    <div class="vertical-spacer"></div>
+           
+    <div id="footer">
+        <div class="group">
+            <h5>Contact us</h5>
+            <p>Email: curbstonecoder@gmail.com</p>
+            <p>Phone: (904) 866-6418</p>
+        </div>
+        <div class="group">
+            <h5>Website Information</h5>
+        </div>
+        <div class="group">
+            <h5>Pricing Disclaimer</h5>
+            <p>Project prices are considered on a case to case <br> basis. Consider all prices listed on this site to be estimates.</p>
+        </div>
+        <span>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></span>
+        <span>Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></span>
+    </div>
+    
+        <script>
+            
+            function fadein() {
+                document.getElementById("title").style.opacity = "1";
+                document.getElementById("backdrop").style.opacity = "0.5";
+                document.getElementById("right-button").style.opacity = "1";
+                
+                resize();
+            }
+            
+            function floatHeader() {
+                var header = document.getElementById("header");
+                var pos = window.pageYOffset;
+                if (pos > "50") {
+                    header.style.position = "sticky";
+                }
+                
+                else {
+                    header.style.position = "relative";
+                }
+            }
+            
+            function display() {
+                elem = document.getElementsByClassName("services-box")[0];
+                elem.style.opacity = "0.8";
+                elem.style.visibility = "visibile";
+            }
+            
+            function hide() {
+                elem = document.getElementsByClassName("services-box")[0];
+                elem.style.opacity = "0";
+                elem.style.visibility = "collapse";
+            }
+            
+            function openMenu(x) {
+                x.classList.toggle("change");
+                elem = document.getElementById("sidebar");
+                elem.style.width = "35%";
+                elem.style.overflow = "show";
+                document.getElementById("dim").style.zIndex = "2";
+                document.getElementById("dim").style.backgroundColor = "black";
+                
+                x.onclick = function () { closeMenu(x) };
+            }
+
+            function closeMenu(x) {
+                x.classList.toggle("change");
+                elem = document.getElementById("sidebar");
+                elem.style.width = "0%";
+                elem.style.overflow = "hidden";
+                document.getElementById("dim").style.zIndex = "1";
+                document.getElementById("dim").style.backgroundColor = "transparent";
+
+                x.onclick = function () { openMenu(x) };
+            }
+
+            function fade() {
+                if (window.pageYOffset > 100) {
+                    document.getElementById("header").style.opacity = "0";
+                }
+
+                else {
+                    document.getElementById("header").style.opacity = "1";
+                }
+
+            }
+            
+        </script>
+    
+</body>
+</html>
