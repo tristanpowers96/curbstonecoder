@@ -25,7 +25,7 @@ div.vertical-spacer {
     border-width: 0 0 5px 0;
     border-style: solid;
     border-color: black;
-    
+
     background-image: linear-gradient(darkslategray, steelblue);
 }
 
@@ -90,20 +90,20 @@ div.vertical-spacer {
 }
 
 #backdrop {
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
-    opacity: 0; 
-    z-index: 0; 
-    height: 100%; 
-    width: 100%; 
+    opacity: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
     transition: 2s;
     transition-delay: 1s;
 }
 
 #logo {
     position:absolute;
-    z-index: 10; 
+    z-index: 10;
     height: 100%;
 }
 
@@ -205,7 +205,7 @@ body .nav {
     font-size: 40px;
     text-decoration: underline;
     text-decoration-style: dotted;
-    
+
 }
 
 #info p {
@@ -224,7 +224,7 @@ body .nav {
     font-style: italic;
     font-size: 26px;
     text-decoration: none;
-    bottom: 0; 
+    bottom: 0;
     right: 0;
     padding-right: 10px;
 }
@@ -235,7 +235,7 @@ body .nav {
     height: 30%;
     background-color: black;
     opacity: 0.9;
-    
+
 }
 
 #footer .group {

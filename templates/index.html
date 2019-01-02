@@ -1,11 +1,11 @@
-{ % extends "base_generic.html" %}
-<head>
-{% block head %}
-  {{ super() }}
-{% endblock %}
-</head>
+{% extends "base_generic.html" %}
 
 {% block content %}
+<div class="container-fluid" id="jumbo-header">
+    <img id="backdrop" src="https://dictionary.cambridge.org/images/thumb/black_noun_002_03536.jpg?version=4.0.64">
+    <h1 id="title">Website design, &nbsp; &nbsp; &nbsp;<br><br> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;made simple</h1>
+</div>
+
 <div class="vertical-spacer"></div>
 
 <div class="container-fluid" id="info">
@@ -14,7 +14,7 @@
         <div class="row">
             <div class="well well-lg">
                 <h3>Custom Design</h3>
-                <img style="float:left" src="{{ url_for('static', filename='images/browser_5.png') }}">
+                <img src="{{ url_for('static', filename='images/browser_5.png') }}">
                 <img src="{{ url_for('static', filename='images/browser.png') }}">
                 <img src="{{ url_for('static', filename='images/browser_1.png') }}">
                 <img src="{{ url_for('static', filename='images/browser_2.png') }}">
