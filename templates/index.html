@@ -6,43 +6,82 @@
     <h1 id="title">Website design, &nbsp; &nbsp; &nbsp;<br><br> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;made simple</h1>
 </div>
 
-<div class="vertical-spacer"></div>
+<div class="vertical-spacer-small"></div>
 
 <div class="container-fluid" id="info">
 
-        <h2>What we do</h2>
         <div class="row">
-            <div class="well well-lg">
+            <div class="well">
                 <h3>Custom Design</h3>
-                <img src="{{ url_for('static', filename='images/browser_5.png') }}">
-                <img src="{{ url_for('static', filename='images/browser.png') }}">
-                <img src="{{ url_for('static', filename='images/browser_1.png') }}">
-                <img src="{{ url_for('static', filename='images/browser_2.png') }}">
-                <p>The website you want, how you want. No website builder templates used,<br> only custom from scratch. Show people exactly what you want them to see.<br> </p>
-                <a href="#">Learn more &darr;</a>
+                <div class="images">
+                  <img class="thumb" src="{{ url_for('static', filename='images/browser_2.png') }}">
+                </div>
+                <p>The website you want, how you want. We build your website from the<br> ground up, no cheap website builders used. <br> Show your customers the image you want for your business. </p>
+                <a onclick="showMore(0)" href="#" class="dropdown">see more</a>
+                <div class="spacer"></div>
+                <div class="details">
+                  <img class="description-img" src="{{ url_for('static', filename='images/browser_5.png') }}">
+                  <img class="description-img" src="{{ url_for('static', filename='images/browser.png') }}">
+                  <img class="description-img" src="{{ url_for('static', filename='images/browser_1.png') }}">
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="well well-lg">
+            <div class="well">
                 <h3>Responsive Layout</h3>
-                <img style="float:left" src="{{ url_for('static', filename='images/screen.png') }}">
-                <img src="{{ url_for('static', filename='images/monitor.png') }}">
-                <img src="{{ url_for('static', filename='images/smartphones.png') }}">
-                <img src="{{ url_for('static', filename='images/laptop.png') }}">
-                <p>Have a website that grabs the attention of your customers, gives you a <br> professional appearance, and caters to mobile displays.</p>
-                <a href="#">Learn more &darr;</a>
+                <div class="images">
+                  <img class="thumb" src="{{ url_for('static', filename='images/smartphones.png') }}">
+                </div>
+                <p>Own a professional website that grabs the attention of your customers <br> and seamlessly integrates with screens of any size.</p>
+                <a onclick="showMore(1)" href="#" class="dropdown">see more</a>
+                <div class="spacer"></div>
+                <div class="details">
+                  <img class="description-img" src="{{ url_for('static', filename='images/screen.png') }}">
+                  <img class="description-img" src="{{ url_for('static', filename='images/monitor.png') }}">
+                  <img class="description-img" src="{{ url_for('static', filename='images/laptop.png') }}">
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="well well-lg">
+            <div class="well">
                 <h3>Maintenance</h3>
-                <img src="{{ url_for('static', filename='images/maintenance.png') }}">
-                <p>The website you want, how you want. No website builder templates used,<br> only custom from scratch. Show people exactly what you want them to see.</p>
-                <a href="#">Learn more &darr;</a>
+                <div class="images">
+                  <img class="thumb" src="{{ url_for('static', filename='images/web-maintenance.png') }}">
+                </div>
+                <p>Rest easy with continual upkeep and maintenance of your site. <br> Choose a plan that suits your needs.</p>
+                <a onclick="showMore(2)" href="#" class="dropdown">see more</a>
+                <div class="spacer"></div>
+                <div class="details">
+                  <span>Here's some more information about stuff and things</span>
+                  <p>Now I can have other text hidden, as well.</p>
+              </div>
             </div>
         </div>
 
 </div>
 
 <div class="vertical-spacer"></div>
+
+<script>
+
+  var base_height = document.getElementsByClassName("well")[0].offsetHeight;
+
+  function showMore(elem) {
+      var well = document.getElementsByClassName("well")[elem];
+      var link = document.getElementsByClassName("dropdown")[elem];
+
+      if (well.offsetHeight == base_height) {
+        well.style.height = well.scrollHeight + "px";
+        link.text = "see less";
+      }
+
+      else {
+        well.style.height = "470px";
+        link.text = "see more";
+        base_height = 470;
+      }
+  }
+
+</script>
+
 {% endblock %}

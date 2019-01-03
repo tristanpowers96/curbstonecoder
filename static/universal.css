@@ -18,6 +18,14 @@ div.vertical-spacer {
     box-shadow: 0 0 4px 4px lightgrey inset;
 }
 
+div.vertical-spacer-small {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: aliceblue;
+  box-shadow: 0 0 4px 4px lightgrey inset;
+}
+
 #header {
     position: relative;
     z-index: 10;
@@ -114,7 +122,7 @@ div.vertical-spacer {
     border-width: 0 10px 0 10px;
     border-style: solid;
     border-color: black;
-    height: 75vh;
+    height: 85vh;
     z-index: 1;
     transition: 1s;
 }
@@ -168,13 +176,14 @@ body .nav {
     padding-right: 2px;
     background-color: aliceblue;
     z-index: 1;
+    font-stretch: expanded;
 }
 
 #info h2 {
     position: relative;
     float: left;
     font-family: "Exo", sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     background-color: azure;
     padding: 10px;
     width: 90%;
@@ -187,38 +196,64 @@ body .nav {
 
 #info .well {
     position: relative;
-    float:left;
     background-image: linear-gradient(lightsteelblue, aliceblue);
-    margin: 10px;
+    margin: auto;
+    height: 470px;
+    width: 97%;
+    overflow-y: hidden;
+    transition: 0.5s ease;  
+    box-shadow: 0 0 4px 4px lightgrey inset;
 }
 
-#info img {
-    position: absolute;
-    bottom: 0;
-    height: 100px;
-    width: auto;
-    margin: 10px;
+#info .details {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+#info .description-img {
+    width: 15%;
+    margin: 0 9% 0 9%;
+}
+
+#info .thumb {
+  float: left;
+  width: 20%;
+  height: auto;
+  margin-left: 30px;
 }
 
 #info h3 {
     top: 0;
     padding-top: 0;
-    font-family: "Exo", sans-serif;
-    font-size: 40px;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-
+    padding-bottom: 30px;
+    font-family: "Orbitron", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    color: #211F95;
 }
 
 #info p {
     float: right;
-    font-family: "Roboto", sans-serif;
+    font-family: "Raleway", sans-serif;
+    font-stretch: semi-expanded;
     font-size: 30px;
     top: 0;
-    border-style: solid;
-    border-color: steelblue;
-    border-bottom-width: 10px;
-    padding: 10px;
+    padding-top: 30px;
+}
+
+#info .spacer {
+  width: 100%;
+  margin: 50px 0 50px 0;
+  border-style: solid;
+  float: right;
+}
+
+#info span {
+  float:right;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  padding: 10px;
 }
 
 #info a {
