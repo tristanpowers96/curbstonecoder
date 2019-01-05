@@ -7,14 +7,95 @@
     <title>Curbstone Coder</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='universal.css') }}" />
-    <link href="https://fonts.googleapis.com/css?family=Lato|Alegreya|Orbitron|Exo|Abril+Fatface|Raleway" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Alegreya|Exo|Abril+Fatface|Raleway" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.scrollify.js') }}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+
+      $(".card").click(function() {
+        $(this).addClass("outview");
+      });
+
+
+      $(window).on("scroll", check_if_in_view);
+
+      function check_if_in_view() {
+        var $leftelements = $(".animate-element-left");
+        var $rightelements = $(".animate-element-right");
+
+        var window_height = $(window).height();
+        var window_top = $(window).scrollTop();
+        var window_bottom = window_height + window_top;
+
+        if (window_top > (window_height / 5.0)) {
+          $(".divider:first").css({
+            "transition": "1.2s ease",
+            "width": "75%"
+          })
+
+        }
+
+        if (window_top > (window_height / 3.0)) {
+          $("#header").css({
+            "transition": "width 1.2s ease, opacity 0.5s 0.3s",
+            "width": "100%",
+            "opacity": "1"
+          });
+        }
+
+
+        $.each($leftelements, function() {
+          var $leftelement = $(this);
+          var element_height = $leftelement.outerHeight();
+          var element_top = $leftelement.offset().top;
+          var element_bottom = element_height + element_top;
+          var element_mid = (element_top + element_bottom) / 2.0;
+
+          if (element_top <= window_bottom) {
+            $leftelement.css({
+              "transition": "1.2s ease",
+              "transition-delay": "0.5s",
+              "transform": "translate3d(0px, 0, 0)",
+              "opacity": "1"
+            });
+          }
+
+        })
+
+        $.each($rightelements, function() {
+          var $rightelement = $(this);
+          var element_height = $rightelement.outerHeight();
+          var element_top = $rightelement.offset().top;
+          var element_bottom = element_height + element_top;
+          var element_mid = (element_top + element_bottom) / 2.0;
+
+          if (element_top <= window_bottom) {
+            $rightelement.css({
+              "transition": "1s ease",
+              "transition-delay": "0.5s",
+              "transform": "translate3d(0px, 0, 0)",
+              "opacity": "1"
+            });
+          }
+
+        })
+
+      }
+  });
+</script>
 </head>
-<body onload="fadein()" onscroll="floatHeader()">
+<body>
+
+    <div class="container-fluid" id="jumbo-header">
+        <h4>I nnovate.</h4>
+        <h3>&ensp;&ensp;Expand.</h3>
+        <h2><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;create your<br></h2>
+        <h1><strong>&ensp;&ensp;&ensp;&ensp;<span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span><span>.</span></h1>
+    </div>
 
     <div class="container-fluid" id="header">
-            <img id="logo" src="{{ url_for('static', filename='images/logo8.png') }}" />
             <div class="tabs">
                 <a class="tab" href="#">Home</a>
                 <a class="tab" href="#">Services
@@ -39,22 +120,62 @@
             </div>
         </div>
 
-    {% block content %}
-    {% endblock %}
+        <div class="divider"></div>
+
+        <div id="info">
+          <div class="card" style="margin-left: 1vw;">
+            <h1>Plus,</h1>
+            <h1> I'll give you a great rate.</h1>
+          </div>
+          <div class="card" style="margin-left: 2vw; margin-top: 1vh;">
+            <h1>Let's get in touch. We'll talk about your project, and I promise I'll make your business better.</h1>
+          </div>
+          <div id="card_1" class="card" style="margin-left: 3vw; margin-top: 2vh;">
+            <h1>Hi.</h1>
+            <h1>I'm Tristan, and I'm a freelance web designer.</h1>
+          </div>
+        </div>
+
+      <div class="container-fluid" id="banners">
+        <div class="vertical-spacer"></div>
+              <div id="container"class="animate-element-left">
+                <img src="{{ url_for('static', filename='images/blackboard-business-chalkboard-355988.jpg') }}"/>
+                <div style="width: 100%; border-style: solid; border-width: 5px 0 0 0; border-color: lightgrey; margin-left: 50%;"></div>
+                <div class="row">
+                    <div class="well">
+                        <h3>Custom Design</h3>
+                        <p>Design is about more than just plugging your ideas into a <br>template. I build my websites from the ground up.</p>
+                        <p>I care about your ideas. I can work with you to make them a <br>reality.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-spacer"></div>
+              <div class="animate-element-left">
+                <img src="{{ url_for('static', filename='images/android-android-phone-box-441794.jpg') }}"/>
+                <div style="width: 100%; border-style: solid; border-width: 5px 0 0 0; border-color: lightgrey; margin-left: 50%;"></div>
+                <div class="row">
+                    <div id="right-slide" class="well">
+                        <h3>Responsive Layout</h3>
+                        <p>A website that looks terrible on smartphones and tablets<br> is almost useless. I carefully respond to different screen <br>sizes.</p>
+                    </div>
+                </div>
+            </div>
+              <div class="vertical-spacer"></div>
+              <div class="animate-element-left">
+                <div style="width: 100%; border-style: solid; border-width: 5px 0 0 0; border-color: lightgrey; margin-left: 50%;"></div>
+                <div class="row">
+                    <div class="well">
+                        <h3>Maintenance</h3>
+                        <p>Keeping a website running and updated doesn't have to be<br> complicated. I can take care of as much or little as you want.</p>
+                    </div>
+                </div>
+            </div>
+      </div>
+
+    <div class="vertical-spacer"></div>
+
 
     <div id="footer">
-        <div class="group">
-            <h5>Contact us</h5>
-            <p>Email: curbstonecoder@gmail.com</p>
-            <p>Phone: (904) 866-6418</p>
-        </div>
-        <div class="group">
-            <h5>Website Information</h5>
-        </div>
-        <div class="group">
-            <h5>Pricing Disclaimer</h5>
-            <p>Project prices are considered on a case to case <br> basis. Consider all prices listed on this site to be estimates.</p>
-        </div>
         <span>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></span>
     </div>
 
@@ -62,7 +183,7 @@
 
             function fadein() {
                 document.getElementById("title").style.opacity = "1";
-                document.getElementById("backdrop").style.opacity = "0.5";
+                document.getElementById("backdrop").style.opacity = "0.8";
                 document.getElementById("right-button").style.opacity = "1";
 
                 resize();

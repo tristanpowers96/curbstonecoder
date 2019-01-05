@@ -1,40 +1,60 @@
 ﻿html, body {
     height: 100%;
-    width: 100vw;
-    background-color: darkslategray;
-    overflow-x: hidden;
-    background-image: url("images/daniel-chen-546446-unsplash.jpg");
+    width: 100%;
     background-size: 100%;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
+@font-face {
+  font-family: "Simplifica";
+  src: url("fonts/simplifica.ttf");
+}
+
+@font-face {
+  font-family: "Anurati";
+  src: url("fonts/anurati.otf");
+}
+
+@font-face {
+  font-family: "Plento";
+  src: url("fonts/plento.ttf");
+}
+
+@font-face {
+  font-family: "Blanka";
+  src: url("fonts/blanka.otf");
+}
+
+@font-face {
+  font-family: "Break";
+  src: url("fonts/break_regular.ttf");
+}
+
+
 div.vertical-spacer {
     position: relative;
     width: 100%;
-    height: 300px;
-    background-color: aliceblue;
-    box-shadow: 0 0 4px 4px lightgrey inset;
+    height: 250px;
 }
 
 div.vertical-spacer-small {
   position: relative;
   width: 100%;
   height: 100px;
-  background-color: aliceblue;
-  box-shadow: 0 0 4px 4px lightgrey inset;
 }
 
 #header {
-    position: relative;
+    position:relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    opacity: 0;
     z-index: 10;
-    height: 15%;
-    border-width: 0 0 5px 0;
-    border-style: solid;
-    border-color: black;
-
-    background-image: linear-gradient(darkslategray, steelblue);
+    height: 10%;
+    background-image: linear-gradient(to left, lightgrey, white, transparent);
 }
 
 #header .tabs {
@@ -45,12 +65,13 @@ div.vertical-spacer-small {
     padding-right: 20px;
 }
 
+
 .tab {
     position: relative;
     padding: 20px;
-    color: lightgrey;
-    font-size: 24px;
-    font-family: "Orbitron", sans-serif;
+    color: black;
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
     transition: all 0.5s ease;
     text-decoration: none;
     transition-delay: 0.15s;
@@ -59,98 +80,175 @@ div.vertical-spacer-small {
 
 .tab:hover {
     transition: all 0.3s ease;
-    color: ghostwhite;
+    font-size: 1.75em;
+    text-decoration: none;
+    text-shadow: grey 0 0 2px;
+    color: white;
 }
 
 .content-box {
     position: absolute;
     top: 35px;
     right: 0;
-    width: 100%;
-    height: auto;
+    width: 0;
+    height: 0;
     padding: 30px 10px 20px 40%;
+    margin-right: 20px;
     text-align: right;
-    font-size: 20px;
-    font-family: "Orbitron", sans-serif;
-    background-color: black;
-    opacity: 0;
+    font-size: 18px;
+    font-family: "Raleway", sans-serif;
+    background-color: white;
+    box-shadow: -4px 4px 12px 4px lightgrey;
     visibility: collapse;
-    transition: all 0.5s ease-in-out;
+    transition:
+    width 0.3s,
+    height 0.3s 0.2s;
 }
 
-.content-box a {
+.tab-item {
     display: inline-block;
+    opacity: 0;
+    color: black;
     padding: 20px 10px 20px 0;
 }
 
+.tab-item:hover {
+  transition: all 0.1s ease;
+  text-decoration: none;
+  text-shadow: black 0 0 4px;
+  color: darkgrey;
+}
+
 .tab:hover + .content-box {
-    opacity: 0.8;
     visibility:visible;
+    width: 100%;
+    height: 50vh;
 }
 
 .content-box:hover {
-    opacity: 0.8;
+    width: 100%;
+    height: 50vh;
     visibility: visible;
 }
 
-.content-box:hover {
-    transition-delay: 1s;
+
+.content-box:hover > .tab-item {
+    opacity: 1;
+    transition: 0.5s;
 }
 
-#backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 0;
-    height: 100%;
+.tab:hover + .content-box > .tab-item {
+    opacity: 1;
+    transition: 0.5s 0.5s;
+}
+
+
+.divider {
+  width: 0;
+  margin: 0 auto 0 auto;
+  border-width: 0 0 5px 0;
+  border-style: solid;
+  border-color: silver;
+}
+
+
+
+#overlay {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  left: 0;
+  opacity: 1;
+  animation: reveal 1s ease-in;
+}
+
+@keyframes reveal {
+  0% {
+    width: 0;
+  }
+
+  50% {
     width: 100%;
-    transition: 2s;
-    transition-delay: 1s;
-}
+    margin-left: 0;
+  }
 
-#logo {
-    position:absolute;
-    z-index: 10;
-    height: 100%;
+  100% {
+    margin-left: 100%;
+  }
+
 }
 
 #jumbo-header {
     position: relative;
-    padding-top: 5vh;
     padding-left: 0;
-    border-width: 0 10px 0 10px;
-    border-style: solid;
-    border-color: black;
-    height: 85vh;
+    margin-top: 15vh;
+    width: 100%;
+    height: 80vh;
     z-index: 1;
     transition: 1s;
 }
 
 
-#title {
-    position: absolute;
-    color: ghostwhite;
-    font-family: "Orbitron", sans-serif;
-    right: 0;
-    padding-right: 10px;
+#jumbo-header h1, h2, h3, h4 {
+    color: black;
+    font-family: "Anurati", "Simplifica";
+    font-size: 52px;
+    margin-left: 12%;
     z-index: 2;
-    opacity: 0;
-    transition: 2s;
-    transition-delay: 1s;
+
 }
 
-@media screen and (min-width: 800px) {
-    #jumbo-header h1 {
-        font-size: 52px;
+#jumbo-header h4 {
+  animation: highlight 2s ease-in-out;
+  animation-delay: 1s;
+}
+
+#jumbo-header h3 {
+  animation: highlight 2s ease;
+  animation-delay: 2.5s;
+}
+
+#jumbo-header h2 {
+  font-size: 3em;
+  margin-left: 15%;
+}
+
+#jumbo-header h1 {
+  font-size: 11em;
+  margin-left: 8%;
+  animation: highlight 2.5s ease-in-out;
+  animation-delay: 3.5s;
+}
+
+@keyframes highlight {
+    0% {
+      color: black;
+      text-shadow: black 0 0 0;
+    }
+
+    50% {
+      color: white;
+      text-shadow: black 0 0 8px;
+    }
+
+    100% {
+      color: black;
+      text-shadow: black 0 0 0;
     }
 }
 
-@media screen and (max-width: 800px) and (min-width: 600px) {
-    #jumbo-header h1 {
-        font-size: 42px;
-    }
+#jumbo-header h1:hover {
+  text-shadow: grey 0 0 4px;
 }
+
+#jumbo-header span:hover {
+    color: lightgrey;
+    text-shadow: black 0 0 8px;
+    transition: 0.2s ease;
+    cursor: default;
+}
+
+
 
 @media screen and (max-width: 600px) {
     #jumbo-header h1 {
@@ -164,112 +262,223 @@ div.vertical-spacer-small {
     z-index: 0;
 }
 
-body .nav {
-    background-color: darkslategray;
+#info {
+  position: relative;
+  perspective: 40px;
+  height: 40vh;
+  float: left;
+}
+
+.card {
+  position: absolute;
+  z-index: 1;
+  left: 10vw;
+  top: 10vh;
+  width: 75vw;
+  height: 40vh;
+  background-color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 2px 4px 14px 5px lightgrey;
 }
 
 
-#info {
+@keyframes slide {
+    0% {
+      left: 10vw;
+    }
+    100% {
+      left: 15vw;
+    }
+}
+
+.card.outview {
+  animation: flip 1s forwards;
+  transition: 1s ease;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg) translateY(0);
+  }
+
+  50% {
+    transform: rotateX(0.3deg) translateY(-400px);
+  }
+
+  100% {
+    transform: rotateX(0deg) translateY(0px);
+    z-index: -1;
+  }
+
+}
+
+.card h1 {
+  font-family: "Raleway", sans-serif;
+  padding: 20px;
+  width: 75%;
+  margin: auto;
+  font-size: 40px;
+  color: black;
+}
+
+
+#banners {
     position: relative;
+    overflow-x: hidden;
     text-align: left;
+    margin-top: 10%;
     padding-left: 2px;
+    padding-top: 10%;
     padding-right: 2px;
-    background-color: aliceblue;
     z-index: 1;
     font-stretch: expanded;
 }
 
-#info h2 {
+#banners h2 {
     position: relative;
     float: left;
-    font-family: "Exo", sans-serif;
-    font-size: 40px;
+    font-family: "Lato", sans-serif;
+    font-size: 36px;
     background-color: azure;
     padding: 10px;
     width: 90%;
     box-shadow: 0 0 2px 2px lightgrey;
 }
 
-#info .row {
+#banners .row {
     margin-top: 20px;
 }
 
-#info .well {
+#banners .well {
     position: relative;
-    background-image: linear-gradient(lightsteelblue, aliceblue);
-    margin: auto;
-    height: 470px;
-    width: 97%;
+    background-image: linear-gradient(to bottom right, slategray, white, white);
+    border-style: none;
+    margin-right: auto;
+    margin-left: 50%;
+    height: auto;
+    width: 75%;
     overflow-y: hidden;
-    transition: 0.5s ease;  
-    box-shadow: 0 0 4px 4px lightgrey inset;
+    transition: 1s ease;
 }
 
-#info .details {
+#banners .well:hover {
+  z-index: 10;
+  margin-left: 43%;
+  margin-top: -3%;
+  transform: rotateX(0.1deg) rotateY(0.1deg);
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+#right-slide {
+  background-image: linear-gradient(to top left, slategray, white, white);
+}
+
+
+#banners .details {
   display: inline-block;
   position: relative;
   width: 100%;
 }
 
-#info .description-img {
+#banners .description-img {
     width: 15%;
     margin: 0 9% 0 9%;
 }
 
-#info .thumb {
+#banners .thumb {
   float: left;
-  width: 20%;
+  width: 25%;
   height: auto;
   margin-left: 30px;
 }
 
-#info h3 {
+#banners h3 {
     top: 0;
     padding-top: 0;
     padding-bottom: 30px;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Simplifica", sans-serif;
     font-weight: bold;
-    font-size: 60px;
-    color: #211F95;
+    font-size: 40px;
+    margin-left: 0;
+    color: ghostwhite;
 }
 
-#info p {
-    float: right;
+#banners p {
+    float: left;
     font-family: "Raleway", sans-serif;
     font-stretch: semi-expanded;
-    font-size: 30px;
+    font-size: 20px;
     top: 0;
     padding-top: 30px;
+    margin-left: 10%;
 }
 
-#info .spacer {
+#banners .spacer {
   width: 100%;
   margin: 50px 0 50px 0;
   border-style: solid;
   float: right;
 }
 
-#info span {
+#banners span {
   float:right;
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   padding: 10px;
 }
 
-#info a {
+#banners a {
     position: absolute;
     font-style: italic;
-    font-size: 26px;
+    font-size: 18px;
     text-decoration: none;
     bottom: 0;
-    right: 0;
+    left: 50%;
     padding-right: 10px;
+    color: black;
 }
+
+.animate-element-left {
+  opacity: 0;
+  transform: translate3d(30%, 0, 0);
+  perspective: 40px;
+}
+
+.animate-element-left img {
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 0;
+  z-index: 10;
+  top: 0;
+  height: auto;
+  position: absolute;
+  box-shadow: 2px 2px 8px 4px grey;
+  transition: 1s;
+
+}
+
+.animate-element-left img:hover {
+  width: 42%;
+  top: -5%;
+  margin-left: 10%;
+  transform: rotateX(-0.1deg) rotateY(-0.1deg);
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+
+.animate-element-right {
+  opacity: 0;
+  transform: translate3d(-30%, 0, 0);
+}
+
 
 #footer {
     color: ghostwhite;
     position: relative;
-    height: 30%;
+    height: 5%;
     background-color: black;
     opacity: 0.9;
 
