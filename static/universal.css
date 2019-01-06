@@ -77,6 +77,11 @@ div.vertical-spacer-small {
     transition-delay: 0.15s;
 }
 
+@media screen and max-width: 700px {
+  .tab {
+    padding: 5px;
+  }
+}
 
 .tab:hover {
     transition: all 0.3s ease;
@@ -223,6 +228,7 @@ div.vertical-spacer-small {
 
 @media screen and (max-width: 700px) {
   #jumbo-header h1 {
+    margin-left: 10%;
     font-size: 60px;
   }
 }
