@@ -298,6 +298,11 @@ div.vertical-spacer-small {
     }
 }
 
+.card:hover {
+  animation: flip 1s forwards;
+  transition: 1s ease;
+}
+
 .card.outview {
   animation: flip 1s forwards;
   transition: 1s ease;
