@@ -6,22 +6,6 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-
-#loading {
-  width: 10vw;
-  margin: 20vh auto 0 auto;
-  text-align: center;
-}
-
-#loading h1 {
-  font-size: 30px;
-  font-family:"Simplifica";
-}
-
-#content {
-  display: none;
-}
-
 @font-face {
   font-family: "Simplifica";
   src: url("fonts/simplifica.ttf");
@@ -47,6 +31,20 @@
   src: url("fonts/break_regular.ttf");
 }
 
+#loading {
+  width: 10vw;
+  margin: 20vh auto 0 auto;
+  text-align: center;
+}
+
+#loading h1 {
+  font-size: 30px;
+  font-family:"Simplifica";
+}
+
+#content {
+  display: none;
+}
 
 div.vertical-spacer {
     position: relative;
