@@ -123,6 +123,12 @@ div.vertical-spacer-small {
     padding: 20px 10px 20px 0;
 }
 
+@media screen and (max-width: 700px) {
+  .tab-item {
+    padding: 15px 10px 15px 0;
+  }
+}
+
 .tab-item:hover {
   transition: all 0.1s ease;
   text-decoration: none;
@@ -144,7 +150,7 @@ div.vertical-spacer-small {
 
 @media screen and (max-width: 700px) {
   .content-box:hover {
-    height: 60vh;
+    height: 65vh;
   }
 }
 
