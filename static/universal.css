@@ -298,26 +298,25 @@ div.vertical-spacer-small {
     }
 }
 
-.card:hover {
-  animation: flip 1s forwards;
-  transition: 1s ease;
-}
-
 .card.outview {
+  -webkit-animation: flip 1s forwards;
   animation: flip 1s forwards;
   transition: 1s ease;
 }
 
 @keyframes flip {
   0% {
+    -webkit-transform: rotateX(0deg) translateY(0);
     transform: rotateX(0deg) translateY(0);
   }
 
   50% {
+    -webkit-transform: rotateX(0.3deg) translateY(-400px);
     transform: rotateX(0.3deg) translateY(-400px);
   }
 
   100% {
+    -webkit-transform: rotateX(0deg) translateY(0px);
     transform: rotateX(0deg) translateY(0px);
     z-index: -1;
   }
