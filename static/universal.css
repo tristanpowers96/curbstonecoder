@@ -369,7 +369,7 @@ div.vertical-spacer-small {
     margin-right: auto;
     margin-left: 50%;
     height: auto;
-    width: 75%;
+    width: 75vw;
     overflow-y: hidden;
     transition: 1s ease;
 }
