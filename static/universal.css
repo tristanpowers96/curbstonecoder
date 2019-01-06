@@ -142,6 +142,11 @@ div.vertical-spacer-small {
     visibility: visible;
 }
 
+@media screen and (max-width: 700px) {
+  .content-box:hover {
+    height: 60vh;
+  }
+}
 
 .content-box:hover > .tab-item {
     opacity: 1;
@@ -482,9 +487,8 @@ div.vertical-spacer-small {
 @media screen and (max-width: 700px) {
   .animate-element-left img {
     position: relative;
-    margin-top: 10px;
     margin-bottom: 10px;
-    width: 80%;
+    width: 90%;
   }
 }
 
