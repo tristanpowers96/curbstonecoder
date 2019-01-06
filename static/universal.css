@@ -37,6 +37,12 @@
   text-align: center;
 }
 
+@media screen and (max-width: 700px) {
+    #loading {
+      width: 40vw;
+    }
+}
+
 #loading h1 {
   font-size: 30px;
   font-family:"Simplifica";
@@ -153,6 +159,12 @@ div.vertical-spacer-small {
     visibility:visible;
     width: 100%;
     height: 50vh;
+}
+
+@media screen and (max-width: 700px) {
+  .tab:hover + .content-box {
+      height: 60vh;
+  }
 }
 
 .content-box:hover {
