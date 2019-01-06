@@ -87,7 +87,11 @@
 </script>
 </head>
 <body>
-
+<div id="loading">
+  <img id="loading" src="{{ url_for('static', filename='images/loader.gif') }}"/>
+  <h1>Just a moment.</h1>
+</div>
+<div id="content">
     <div class="container-fluid" id="jumbo-header">
         <h4>I nnovate.</h4>
         <h3>&ensp;&ensp;Expand.</h3>
@@ -173,77 +177,16 @@
             </div>
             <div class="vertical-spacer"></div>
       </div>
+</div>
+<script>
+  $(window).on("load", function() {
+      setTimeout(showPage, 2000);
+  });
 
-
-
-        <script>
-
-            function fadein() {
-                document.getElementById("title").style.opacity = "1";
-                document.getElementById("backdrop").style.opacity = "0.8";
-                document.getElementById("right-button").style.opacity = "1";
-
-                resize();
-            }
-
-            function floatHeader() {
-                var header = document.getElementById("header");
-                var pos = window.pageYOffset;
-                if (pos > "50") {
-                    header.style.position = "sticky";
-                }
-
-                else {
-                    header.style.position = "relative";
-                }
-            }
-
-            function display() {
-                elem = document.getElementsByClassName("services-box")[0];
-                elem.style.opacity = "0.8";
-                elem.style.visibility = "visibile";
-            }
-
-            function hide() {
-                elem = document.getElementsByClassName("services-box")[0];
-                elem.style.opacity = "0";
-                elem.style.visibility = "collapse";
-            }
-
-            function openMenu(x) {
-                x.classList.toggle("change");
-                elem = document.getElementById("sidebar");
-                elem.style.width = "35%";
-                elem.style.overflow = "show";
-                document.getElementById("dim").style.zIndex = "2";
-                document.getElementById("dim").style.backgroundColor = "black";
-
-                x.onclick = function () { closeMenu(x) };
-            }
-
-            function closeMenu(x) {
-                x.classList.toggle("change");
-                elem = document.getElementById("sidebar");
-                elem.style.width = "0%";
-                elem.style.overflow = "hidden";
-                document.getElementById("dim").style.zIndex = "1";
-                document.getElementById("dim").style.backgroundColor = "transparent";
-
-                x.onclick = function () { openMenu(x) };
-            }
-
-            function fade() {
-                if (window.pageYOffset > 100) {
-                    document.getElementById("header").style.opacity = "0";
-                }
-
-                else {
-                    document.getElementById("header").style.opacity = "1";
-                }
-
-            }
-
-        </script>
-
+  function showPage() {
+    $("#loading").remove();
+    $("#content").css({"display":"inherit"});
+  }
+</script>
 </body>
 </html>
