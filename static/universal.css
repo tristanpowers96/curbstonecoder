@@ -192,32 +192,39 @@ div.vertical-spacer-small {
 #jumbo-header h1, h2, h3, h4 {
     color: black;
     font-family: "Anurati", "Simplifica";
-    font-size: 52px;
     margin-left: 12%;
     z-index: 2;
 
 }
 
 #jumbo-header h4 {
+  font-size: 52px;
   animation: highlight 2s ease-in-out;
   animation-delay: 1s;
 }
 
 #jumbo-header h3 {
+  font-size: 52px;
   animation: highlight 2s ease;
   animation-delay: 2.5s;
 }
 
 #jumbo-header h2 {
-  font-size: 3em;
+  font-size: 32px;
   margin-left: 15%;
 }
 
 #jumbo-header h1 {
-  font-size: 11em;
+  font-size: 140px;
   margin-left: 8%;
   animation: highlight 2.5s ease-in-out;
   animation-delay: 3.5s;
+}
+
+@media screen and max-width: 700px {
+  #jumbo-header h1 {
+    font-size: 40px;
+  }
 }
 
 @keyframes highlight {
@@ -248,13 +255,6 @@ div.vertical-spacer-small {
     cursor: default;
 }
 
-
-
-@media screen and (max-width: 600px) {
-    #jumbo-header h1 {
-        font-size: 32px;
-    }
-}
 
 #main-img {
     position: absolute;
@@ -314,7 +314,7 @@ div.vertical-spacer-small {
 }
 
 .card h1 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Simplifica", sans-serif;
   padding: 20px;
   width: 75%;
   margin: auto;
