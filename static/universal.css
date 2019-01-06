@@ -328,6 +328,11 @@ div.vertical-spacer-small {
   color: black;
 }
 
+@media screen and (max-width: 700) {
+  .card h1 {
+    font-size: 18px;
+  }
+}
 
 #banners {
     position: relative;
@@ -358,6 +363,7 @@ div.vertical-spacer-small {
 
 #banners .well {
     position: relative;
+    float: left;
     background-image: linear-gradient(to bottom right, slategray, white, white);
     border-style: none;
     margin-right: auto;
