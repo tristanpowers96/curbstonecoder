@@ -281,6 +281,12 @@ div.vertical-spacer-small {
   float: left;
 }
 
+@media screen and (max-width: 700px) {
+  #info {
+    margin-bottom: 40vh;
+  }
+}
+
 .card {
   position: absolute;
   z-index: 1;
