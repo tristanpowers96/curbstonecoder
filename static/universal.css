@@ -320,7 +320,21 @@ div.vertical-spacer-small {
     transform: rotateX(0deg) translateY(0px);
     z-index: -1;
   }
+}
 
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: rotateX(0deg) translateY(0);
+  }
+
+  50% {
+    -webkit-transform: rotateX(0.3deg) translateY(-400px);
+  }
+
+  100% {
+    -webkit-transform: rotateX(0deg) translateY(0px);
+    z-index: -1;
+  }
 }
 
 .card h1 {
