@@ -39,6 +39,12 @@ div.vertical-spacer {
     height: 40vh;
 }
 
+@media screen and (max-width: 700px) {
+  div.vertical-spacer {
+    height: 20vh;
+  }
+}
+
 div.vertical-spacer-small {
   position: relative;
   width: 100%;
@@ -299,40 +305,21 @@ div.vertical-spacer-small {
 }
 
 .card.outview {
-  -webkit-animation: flip 1s forwards;
   animation: flip 1s forwards;
   transition: 1s ease;
 }
 
 @keyframes flip {
   0% {
-    -webkit-transform: rotateX(0deg) translateY(0);
     transform: rotateX(0deg) translateY(0);
   }
 
   50% {
-    -webkit-transform: rotateX(0.3deg) translateY(-400px);
     transform: rotateX(0.3deg) translateY(-400px);
   }
 
   100% {
-    -webkit-transform: rotateX(0deg) translateY(0px);
     transform: rotateX(0deg) translateY(0px);
-    z-index: -1;
-  }
-}
-
-@-webkit-keyframes flip {
-  0% {
-    -webkit-transform: rotateX(0deg) translateY(0);
-  }
-
-  50% {
-    -webkit-transform: rotateX(0.3deg) translateY(-400px);
-  }
-
-  100% {
-    -webkit-transform: rotateX(0deg) translateY(0px);
     z-index: -1;
   }
 }
@@ -485,6 +472,8 @@ div.vertical-spacer-small {
 @media screen and (max-width: 700px) {
   .animate-element-left img {
     position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 80%;
   }
 }
