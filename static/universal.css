@@ -441,8 +441,10 @@ div.vertical-spacer-small {
 }
 
 @media screen and (max-width: 700px) {
-  #banners .well {
-    hover: none;
+  #banners .well:hover {
+    z-index: inherit;
+    margin-left: inherit;
+    margin-top: inherit;
   }
 }
 
