@@ -440,10 +440,16 @@ div.vertical-spacer-small {
   transition-delay: 0.5s;
 }
 
-#right-slide {
-  background-image: linear-gradient(to top left, slategray, white, white);
+@media screen and (max-width: 700px) {
+  #banners .well:hover {
+    margin-left: 100%;
+    margin-left: 0;
+    margin-top: -3%;
+    transform: rotateX(0.1deg) rotateY(0.1deg);
+    transition: 1s;
+    transition-delay: 0.5s;
+  }
 }
-
 
 #banners .details {
   display: inline-block;
@@ -519,6 +525,7 @@ div.vertical-spacer-small {
   .animate-element-left img {
     position: relative;
     margin-bottom: 10px;
+    margin-left: 0;
     width: 90%;
   }
 }
@@ -532,12 +539,15 @@ div.vertical-spacer-small {
   transition-delay: 0.5s;
 }
 
-
-.animate-element-right {
-  opacity: 0;
-  transform: translate3d(-30%, 0, 0);
+@media screen and (max-width: 700px) {
+  .animate-element-left img:hover {
+    width: 100%;
+    top: 5%;
+    transform: rotateX(-0.1deg) rotateY(-0.1deg);
+    transition: 1s;
+    transition-delay: 0.5s;
+  }
 }
-
 
 #footer {
     color: ghostwhite;
