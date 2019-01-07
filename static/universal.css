@@ -40,6 +40,7 @@
 @media screen and (max-width: 700px) {
     #loading {
       width: 40vw;
+      margin: 10vh auto 0 auto;
     }
 }
 
@@ -163,7 +164,7 @@ div.vertical-spacer-small {
 
 @media screen and (max-width: 700px) {
   .content-box:hover {
-      height: 60vh;
+      height: 70vh;
   }
 }
 
