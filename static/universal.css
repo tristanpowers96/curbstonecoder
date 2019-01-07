@@ -337,17 +337,7 @@ div.vertical-spacer-small {
   border-radius: 25px;
   cursor: pointer;
   box-shadow: 2px 4px 14px 5px lightgrey;
-}
-
-@media screen and (max-width: 700px) {
-  #info {
-    scroll-snap-type: x mandatory;
-  }
-  .card {
-    position: relative;
-    scroll-snap-align: center;
-    display: inline-block;
-  }
+  display: block;
 }
 
 @keyframes slide {
