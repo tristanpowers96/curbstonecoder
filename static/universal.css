@@ -441,17 +441,8 @@ div.vertical-spacer-small {
 }
 
 @media screen and (max-width: 700px) {
-  #banners .well:hover {
-    position: relative;
-    float: left;
-    background-image: linear-gradient(to bottom right, slategray, white, white);
-    border-style: none;
-    margin-right: auto;
-    margin-left: 10%;
-    height: auto;
-    width: 75vw;
-    overflow-y: hidden;
-    transition: 1s ease;
+  #banners .well {
+    hover: none;
   }
 }
 
@@ -546,7 +537,8 @@ div.vertical-spacer-small {
   .animate-element-left img:hover {
     width: 95%;
     top: 2%;
-    margin-left: auto;
+    margin-left: 0;
+    margin-right: 0;
     transform: rotateX(-0.1deg) rotateY(-0.1deg);
     transition: 1s;
     transition-delay: 0.5s;
