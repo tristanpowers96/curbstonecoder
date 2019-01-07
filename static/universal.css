@@ -342,10 +342,10 @@ div.vertical-spacer-small {
 @media screen and (max-width: 700px) {
   #info {
     scroll-snap-type: x mandatory;
+    display: inline-block;
   }
   .card {
     position: relative;
-    float: left;
     scroll-snap-align: center;
   }
 }
