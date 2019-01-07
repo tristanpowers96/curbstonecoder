@@ -162,7 +162,7 @@ div.vertical-spacer-small {
 }
 
 @media screen and (max-width: 700px) {
-  .tab:hover + .content-box {
+  .content-box:hover {
       height: 60vh;
   }
 }
