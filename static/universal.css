@@ -339,6 +339,16 @@ div.vertical-spacer-small {
   box-shadow: 2px 4px 14px 5px lightgrey;
 }
 
+@media screen and (max-width: 700px) {
+  #info {
+    scroll-snap-type: x mandatory;
+  }
+  .card {
+    position: relative;
+    float: left;
+    scroll-snap-align: center;
+  }
+}
 
 @keyframes slide {
     0% {
