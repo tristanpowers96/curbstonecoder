@@ -431,20 +431,14 @@ div.vertical-spacer-small {
   }
 }
 
-#banners .well:hover {
-  z-index: 10;
-  margin-left: 43%;
-  margin-top: -3%;
-  transform: rotateX(0.1deg) rotateY(0.1deg);
-  transition: 1s;
-  transition-delay: 0.5s;
-}
-
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 700px) {
   #banners .well:hover {
-    z-index: inherit;
-    margin-left: inherit;
-    margin-top: inherit;
+    z-index: 10;
+    margin-left: 43%;
+    margin-top: -3%;
+    transform: rotateX(0.1deg) rotateY(0.1deg);
+    transition: 1s;
+    transition-delay: 0.5s;
   }
 }
 
