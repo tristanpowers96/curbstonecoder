@@ -6,6 +6,7 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+
 @font-face {
   font-family: "Simplifica";
   src: url("fonts/simplifica.ttf");
@@ -80,7 +81,19 @@ div.vertical-spacer-small {
     opacity: 0;
     z-index: 10;
     height: 10%;
-    background-image: linear-gradient(to left, lightgrey, white, transparent);
+    background-image: linear-gradient(to left, lightgrey, white, rgba(0,0,0,0));
+}
+
+@media screen and (max-width: 700px) {
+  #header {
+    width: 100%;
+  }
+}
+
+#header.inview {
+  transition: width 1.2s ease, opacity 0.5s 0.3s;
+  width: 100%;
+  opacity: 1;
 }
 
 #header .tabs {
@@ -232,6 +245,31 @@ div.vertical-spacer-small {
     transition: 1s;
 }
 
+.ink {
+	display: block; position: absolute;
+  z-index: 100;
+	background-color: black;
+	border-radius: 100%;
+	transform: scale(0);
+}
+
+.ink-2 {
+  display: block; position: absolute;
+  z-index: 100;
+	background-color: darkgrey;
+	border-radius: 100%;
+	transform: scale(0);
+}
+
+/*animation effect*/
+.ink.animate {animation: ripple 1s;}
+
+.ink-2.animate {animation: ripple 1s;}
+
+@keyframes ripple {
+	/*scale the element to 250% to safely cover the entire link and fade it out*/
+	100% {opacity: 0; transform: scale(1.5);}
+}
 
 #jumbo-header h1, h2, h3, h4 {
     color: black;
@@ -261,8 +299,174 @@ div.vertical-spacer-small {
 #jumbo-header h1 {
   font-size: 140px;
   margin-left: 8%;
+}
+
+#letter-1 {
   animation: highlight 2.5s ease-in-out;
   animation-delay: 3.5s;
+  transition: 0.5s ease;
+}
+
+#letter-1.ping {
+  animation: highlight 1s ease;
+}
+
+#letter-1.animate {
+  cursor: default;
+  transition: 0.5s ease;
+  color: white;
+  text-shadow: black 0 0 8px;
+}
+
+#letter-1.special {
+  animation: shrink 2s;
+}
+
+@keyframes shrink {
+  0% {
+    font-size: 1em;
+  }
+
+  50% {
+    font-size: 0em;
+  }
+
+  100% {
+    font-size: 1em;
+  }
+}
+
+#letter-2 {
+  animation: highlight 2.5s ease-in-out;
+  animation-delay: 3.75s;
+  transition: 0.5s ease;
+}
+
+#letter-2.animate {
+  cursor: default;
+  transition: 0.5s ease;
+  color: white;
+  text-shadow: black 0 0 8px;
+}
+
+#letter-2.special {
+  animation: slideright 2s;
+}
+
+@keyframes slideright {
+  0% {
+    transform: translateX(0);
+    position:absolute;
+  }
+
+  50% {
+    transform: translateX(100vw);
+    opacity: 0;
+    font-size: 0em;
+  }
+
+  75% {
+    transform: translateX(0);
+  }
+
+  100% {
+    font-size: 1em;
+    opacity: 1;
+  }
+}
+
+#letter-3 {
+  animation: highlight 2.5s ease-in-out;
+  animation-delay: 4s;
+  transition: 0.5s ease;
+}
+
+#letter-3.special {
+  animation: fade 2s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#letter-3.animate {
+  cursor: default;
+  transition: 0.5s ease;
+  color: white;
+  text-shadow: black 0 0 8px;
+}
+
+#letter-4 {
+  animation: highlight 2.5s ease-in-out;
+  animation-delay: 4.25s;
+  transition: 0.5s ease;
+}
+
+#letter-4.special {
+  animation: stretch 3s;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(1, 1);
+    position: absolute;
+  }
+
+  100% {
+    transform: scale(-1, 10);
+  }
+}
+
+#letter-4.animate {
+  cursor: default;
+  transition: 0.5s ease;
+  color: white;
+  text-shadow: black 0 0 8px;
+}
+
+#letter-5 {
+  animation: highlight 2.5s ease-in-out;
+  animation-delay: 4.5s;
+  transition: 0.5s ease;
+}
+
+#letter-5.animate {
+  cursor: default;
+  transition: 0.5s ease;
+  color: white;
+  text-shadow: black 0 0 8px;
+}
+
+#letter-6 {
+  animation: highlight 2.5s ease-in-out;
+  animation-delay: 4.75s;
+  transition: 0.5s ease;
+}
+
+#letter-6.animate {
+  cursor: default;
+  transition: 0.5s ease;
+  color: white;
+  text-shadow: black 0 0 8px;
+}
+
+#letter-7 {
+  animation: highlight 2.5s ease-in-out;
+  animation-delay: 5s;
+  transition: 0.5s ease;
+}
+
+#letter-7.animate {
+  cursor: default;
+  transition: 0.5s ease;
+  color: white;
+  text-shadow: black 0 0 8px;
 }
 
 @media screen and (max-width: 700px) {
@@ -289,16 +493,6 @@ div.vertical-spacer-small {
     }
 }
 
-#jumbo-header h1:hover {
-  text-shadow: grey 0 0 4px;
-}
-
-#jumbo-header span:hover {
-    color: lightgrey;
-    text-shadow: black 0 0 8px;
-    transition: 0.2s ease;
-    cursor: default;
-}
 
 
 #main-img {
@@ -399,6 +593,20 @@ div.vertical-spacer-small {
     padding-right: 2px;
     z-index: 1;
     font-stretch: expanded;
+}
+
+#banners .banner-divider {
+  width: 100%;
+  border-style: solid;
+  border-width: 5px 0 0 0;
+  border-color: lightgrey;
+  margin-left: 50%;
+}
+
+@media screen and (max-width: 700px) {
+  #banners .banner-divider {
+    margin-left: 10%;
+  }
 }
 
 #banners h2 {
