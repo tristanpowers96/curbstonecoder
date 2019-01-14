@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="message-box">
+  <h1><strong>Leave a message</strong></h1>
+  <form action="{{ url_for('get_message') }}" method="post">
+    <div class="labels">
+      <p>Name</p>
+      <p>Number</p>
+      <p>Preferred contact method</p>
+      <p>Details</p>
+    </div>
+    <div class="inputs">
+      <input type="text" name="name" placeholder="First and last"></input>
+      <input type="text" name="number" placeholder="xxx-xxx-xxx"></input>
+      <select name="contact">
+        <option value="" disabled selected>Choose an option</option>
+        <option value="Email">Email</option>
+        <option value="Call">Call</option>
+        <option value="Text">Text</option>
+        <option value="Any">Any</option>
+      </select>
+      <textarea type="text" name="details" cols=40 rows=5 placeholder="Any details about your project"></textarea>
+      <input type="submit" value="Submit"></input>
+    </div>
+  </form>
+</div>
+{% endblock %}

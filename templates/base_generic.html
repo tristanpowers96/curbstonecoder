@@ -67,11 +67,6 @@ function hover_2() {
       });
 
       var parent, ink, d, x, y;
-
-      $("#jumbo-header").find("span").click(function() {
-        $(this).toggleClass("special");
-      })
-
       $("#letter-3").hover(function() {
         $("#letter-3.animate").css({"transition-delay":"0s"});
         $("#letter-3").css({"transition-delay":"0s"});
@@ -287,8 +282,7 @@ function hover_2() {
       $(window).on("scroll", check_if_in_view);
 
       function check_if_in_view() {
-        var $leftelements = $(".animate-element-left");
-        var $rightelements = $(".animate-element-right");
+        var $elements = $(".animate-element");
 
         var window_height = $(window).height();
         var window_top = $(window).scrollTop();
@@ -301,43 +295,21 @@ function hover_2() {
           })
         }
 
-        if (window_top > (window_height / 3.0)) {
+        if (window_top > (window_height / 4.0)) {
           $("#header").addClass("inview");
         }
 
 
-        $.each($leftelements, function() {
-          var $leftelement = $(this);
-          var element_height = $leftelement.outerHeight();
-          var element_top = $leftelement.offset().top;
+        $.each($elements, function() {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top = $element.offset().top;
           var element_bottom = element_height + element_top;
           var element_mid = (element_top + element_bottom) / 2.0;
+          var trigger = (element_mid + element_bottom) / 2.0;
 
-          if (element_top <= window_bottom) {
-            $leftelement.css({
-              "transition": "1.2s ease",
-              "transition-delay": "0.5s",
-              "transform": "translate3d(0px, 0, 0)",
-              "opacity": "1"
-            });
-          }
-
-        })
-
-        $.each($rightelements, function() {
-          var $rightelement = $(this);
-          var element_height = $rightelement.outerHeight();
-          var element_top = $rightelement.offset().top;
-          var element_bottom = element_height + element_top;
-          var element_mid = (element_top + element_bottom) / 2.0;
-
-          if (element_top <= window_bottom) {
-            $rightelement.css({
-              "transition": "1s ease",
-              "transition-delay": "0.5s",
-              "transform": "translate3d(0px, 0, 0)",
-              "opacity": "1"
-            });
+          if (trigger <= window_bottom) {
+            $element.addClass("slide");
           }
 
         })
@@ -361,82 +333,28 @@ function hover_2() {
 
     <div class="container-fluid" id="header">
             <div class="tabs">
-                <a class="tab" href="#">Home</a>
+                <a class="tab" href="/">Home</a>
                 <span class="tab" style="cursor: default;">Info</span>
                     <div class="content-box" >
-                        <a class="tab-item" href="#">Static websites</a> <br>
-                        <a class="tab-item" href="#">Dynamic websites</a> <br>
-                        <a class="tab-item" href="#">Responsive display</a>
-                        <a class="tab-item" href="#">Maintenance and upkeep</a>
+                        <a class="tab-item" href="/static_websites">Static websites</a> <br>
+                        <a class="tab-item" href="/dynamic_websites">Dynamic websites</a> <br>
+                        <a class="tab-item" href="/responsive_display">Responsive display</a>
+                        <a class="tab-item" href="/maintenance">Maintenance and upkeep</a>
                     </div>
                 <span class="tab" style="cursor: default;">Contact</span>
                     <div class="content-box">
-                        <a class="tab-item" href="#">Email</a> <br>
-                        <a class="tab-item" href="#">Phone</a> <br>
-                        <a class="tab-item" href="#">Social media</a>
+                        <a class="tab-item" href="/contact">Email</a> <br>
+                        <a class="tab-item" href="/contact">Phone</a> <br>
+                        <a class="tab-item" href="/contact">Social media</a> <br>
+                        <a class="tab-item" href="/message">Message</a>
                     </div>
                 <a class="tab" href="#">Blog</a>
             </div>
         </div>
-
         <div class="divider"></div>
+{% block content %}
+{% endblock %}
 
-        <div id="info">
-          <div class="card" style="margin-left: 1vw;">
-            <h1>Plus,</h1>
-            <h1> I'll give you a great price.</h1>
-          </div>
-          <div class="card" style="margin-left: 2vw; margin-top: 1vh;">
-            <h1>Let's get in touch. We'll talk about your project, and I promise I'll make your business better.</h1>
-          </div>
-          <div id="card_1" class="card" style="margin-left: 3vw; margin-top: 2vh;">
-            <h1>Hi.</h1>
-            <h1>I'm Tristan, and I'm a freelance web designer.</h1>
-          </div>
-        </div>
-
-        <div id="mobile-spacer"></div>
-
-      <div class="container-fluid" id="banners">
-        <div class="vertical-spacer"></div>
-              <div id="container"class="animate-element-left">
-                <img src="{{ url_for('static', filename='images/blackboard-business-chalkboard-355988.jpg') }}"/>
-                <div class="banner-divider"></div>
-                <div class="row">
-                    <div class="well">
-                        <h3>Custom Design</h3>
-                        <p>Design is about more than just plugging your ideas into a <br>template. I build my websites from the ground up.</p>
-                        <p>I care about your ideas. I can work with you to make them a <br>reality.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="vertical-spacer"></div>
-              <div class="animate-element-left">
-                <img src="{{ url_for('static', filename='images/android-android-phone-box-441794.jpg') }}"/>
-                <div class="banner-divider"></div>
-                <div class="row">
-                    <div id="right-slide" class="well">
-                        <h3>Responsive Layout</h3>
-                        <p>A website that doesn't work on smartphones and tablets<br> is almost useless now. I carefully respond to different screen <br>
-                          sizes, making sure you get the best exposure possible.</p>
-                    </div>
-                </div>
-            </div>
-              <div class="vertical-spacer"></div>
-              <div class="animate-element-left">
-                <img src="{{ url_for('static', filename='images/access-blur-business-1181271.jpg') }}"/>
-                <div class="banner-divider"></div>
-                <div class="row">
-                    <div class="well">
-                        <h3>Backend</h3>
-                        <p>Creating a website is a lot more than just making <br> it look pretty. I have the technical skills to build the <br>
-                          framework best suited for you, whether it's a simple static <br> site or a complex shopping database. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="vertical-spacer"></div>
-      </div>
-</div>
 <script>
   $(window).on("load", function() {
       setTimeout(showPage, 1000);

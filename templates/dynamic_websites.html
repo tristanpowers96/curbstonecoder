@@ -1,0 +1,48 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<style>
+#info h1 {
+  font-family: "Simplifica", sans-serif;
+  padding: 20px;
+  width: 75%;
+  margin: auto;
+  font-size: 40px;
+  opacity: 1;
+  color: black;
+}
+
+#info h2, a {
+  font-family: "Simplifica", sans-serif;
+  padding: 20px;
+  width: 75%;
+  margin: auto;
+  font-size: 30px;
+  opacity: 1;
+  color: black;
+}
+
+#info a {
+  cursor: pointer;
+  color: blue;
+}
+
+#info a:hover {
+  color: white;
+  text-decoration: none;
+}
+</style>
+<div class="vertical-spacer-small"></div>
+<div id="info" class="animate-element">
+  <div class="animate-element">
+    <h1 style="text-decoration: underline"><strong>Dynamic Websites</strong></h1>
+    <h2>Sometimes you need a little more than just a few pages to your site. Maybe you have many different
+    products or services you're offering and you need many pages.</h2>
+    <h2>Or perhaps you need something else more complex, such as a booking system, payment system, or messaging database.</h2>
+    <h2>If this is you, I can easily implement just about anything you might need. As well, I can make an admin page for you,
+    making any changes you might need a breeze (with no coding knowledge needed).</h2>
+    <h2>Of course if you'd rather not worry about any of that, I can always handle your site upkeep completely, for a fee.
+    <a href="/maintenance">Read more about maintenance</a></h2>
+  </div>
+</div>
+{% endblock %}
