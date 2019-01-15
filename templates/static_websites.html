@@ -1,29 +1,9 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<style>
-h1 {
-  font-family: "Simplifica", sans-serif;
-  padding: 20px;
-  width: 75%;
-  margin: auto;
-  font-size: 40px;
-  opacity: 1;
-  color: black;
-}
 
-h2 {
-  font-family: "Simplifica", sans-serif;
-  padding: 20px;
-  width: 75%;
-  margin: auto;
-  font-size: 30px;
-  opacity: 1;
-  color: black;
-}
-</style>
 <div class="vertical-spacer-small"></div>
-<div id="info" class="animate-element">
+<div class="animate-element info">
   <div class="animate-element">
     <h1 style="text-decoration: underline"><strong>Static Websites</strong></h1>
     <h2>Not everyone needs a complex website. Sometimes all you need is a way for people to find you in the
@@ -33,4 +13,8 @@ h2 {
     up and running in less time.</h2>
   </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/scroll.js') }}"></script>
 {% endblock %}

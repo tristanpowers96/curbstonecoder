@@ -4,7 +4,7 @@
 
         <div class="vertical-spacer-small"></div>
 
-        <div id="info" class="animate-element">
+        <div class="animate-element info">
           <div class="animate-element">
             <h1>Hi, I'm <span style="color:ghostwhite">Tristan,</span> and I'm a <span style="color:ghostwhite">freelance web developer.</span></h1>
             <h1>Let's get in touch. We can talk about your project and what you need.</h1>
@@ -13,11 +13,11 @@
           </div>
         </div>
 
-        <div id="mobile-spacer"></div>
+        <div class="mobile-spacer"></div>
 
-      <div class="container-fluid" id="banners">
+      <section class="container-fluid banners">
         <div class="vertical-spacer"></div>
-              <div id="container"class="animate-element">
+              <div class="animate-element">
                 <img src="{{ url_for('static', filename='images/blackboard-business-chalkboard-355988.jpg') }}"/>
                 <div class="banner-divider"></div>
                 <div class="row">
@@ -33,7 +33,7 @@
                 <img src="{{ url_for('static', filename='images/android-android-phone-box-441794.jpg') }}"/>
                 <div class="banner-divider"></div>
                 <div class="row">
-                    <div id="right-slide" class="well">
+                    <div class="well">
                         <h3>Responsive Layout</h3>
                         <p>A website that doesn't work on smartphones and tablets<br> is almost useless now. I carefully respond to different screen <br>
                           sizes, making sure you get the best exposure possible.</p>
@@ -53,52 +53,52 @@
                 </div>
             </div>
             <div class="vertical-spacer-small"></div>
-      </div>
+      </section>
+
       <div class="vertical-spacer-small"></div>
 
-      <div id="contact" class="animate-element">
-        <div class="animate-element">
-          <h1>Let's talk. Shoot me a text, send me an email, or leave me a message.</h1>
-          <h1>Or find me on Facebook. I promise I'm a real person.</h1>
-        </div>
-      </div>
-
-      <div class="contact-info">
-        <div class="buttons">
-          <a href="https://www.facebook.com/tristan.powers.54"><img src="{{ url_for('static', filename='images/facebook.png') }}"></a>
-          <a href="https://plus.google.com/108752414557703712355"><img src="{{ url_for('static', filename='images/google.png') }}"></a>
-          <a href="mailto:tristanpowers74@gmail.com"><img src="{{ url_for('static', filename='images/email.png') }}"></a>
-          <a href="tel:904-866-6418"><img src="{{ url_for('static', filename='images/phone.png') }}"></a>
-        </div>
-        <h1>Name: Tristan Powers</h1>
-        <h1>Email: tristanpowers74@gmail.com</h1>
-        <h1>Phone/text: 904-866-6418</h1>
-        <h1>Facebook: https://www.facebook.com/tristan.powers.54</h1>
-      </div>
-
-      <div id="message-box">
-        <h1><strong>Leave a message</strong></h1>
-        <form action="{{ url_for('get_message') }}" method="post">
-          <div class="labels">
-            <p>Name</p>
-            <p>Number</p>
-            <p>Preferred contact method</p>
-            <p>Details</p>
+      <footer>
+        <section class="animate-element contact">
+          <div class="animate-element">
+            <h1>Let's talk. Shoot me a text, send me an email, or leave me a message.</h1>
+            <h1>Or find me on Facebook. I promise I'm a real person.</h1>
           </div>
-          <div class="inputs">
-            <input type="text" name="name" placeholder="First and last"></input>
-            <input type="text" name="number" placeholder="xxx-xxx-xxx"></input>
-            <select name="contact">
-              <option value="" disabled selected>Choose an option</option>
-              <option value="Email">Email</option>
-              <option value="Call">Call</option>
-              <option value="Text">Text</option>
-              <option value="Any">Any</option>
-            </select>
-            <textarea type="text" name="details" cols=40 rows=5 placeholder="Any details about your project"></textarea>
-            <input type="submit" value="Submit"></input>
+        </section>
+        <section class="contact-info">
+          <div class="buttons">
+            <a href="https://www.facebook.com/tristan.powers.54"><img src="{{ url_for('static', filename='images/facebook.png') }}"></a>
+            <a href="https://plus.google.com/108752414557703712355"><img src="{{ url_for('static', filename='images/google.png') }}"></a>
+            <a href="mailto:tristanpowers74@gmail.com"><img src="{{ url_for('static', filename='images/email.png') }}"></a>
+            <a href="tel:904-866-6418"><img src="{{ url_for('static', filename='images/phone.png') }}"></a>
           </div>
-        </form>
-      </div>
-</div>
+          <h1>Name: Tristan Powers</h1>
+          <h1>Email: tristanpowers74@gmail.com</h1>
+          <h1>Phone/text: 904-866-6418</h1>
+          <h1>Facebook: https://www.facebook.com/tristan.powers.54</h1>
+        </section>
+        <section class="message-box">
+          <h1><strong>Leave a message</strong></h1>
+          <form action="{{ url_for('get_message') }}" method="post">
+            <div class="labels">
+              <p>Name</p>
+              <p>Number</p>
+              <p>Preferred contact method</p>
+              <p>Details</p>
+            </div>
+            <div class="inputs">
+              <input type="text" name="name" placeholder="First and last"></input>
+              <input type="text" name="number" placeholder="xxx-xxx-xxx"></input>
+              <select name="contact">
+                <option value="" disabled selected>Choose an option</option>
+                <option value="Email">Email</option>
+                <option value="Call">Call</option>
+                <option value="Text">Text</option>
+                <option value="Any">Any</option>
+              </select>
+              <textarea type="text" name="details" cols=40 rows=5 placeholder="Any details about your project"></textarea>
+              <input type="submit" value="Submit"></input>
+            </div>
+          </form>
+        </section>
+      </footer>
 {% endblock %}

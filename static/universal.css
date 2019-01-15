@@ -17,21 +17,6 @@
   src: url("fonts/anurati.otf");
 }
 
-@font-face {
-  font-family: "Plento";
-  src: url("fonts/plento.ttf");
-}
-
-@font-face {
-  font-family: "Blanka";
-  src: url("fonts/blanka.otf");
-}
-
-@font-face {
-  font-family: "Break";
-  src: url("fonts/break_regular.ttf");
-}
-
 #loading {
   width: 10vw;
   margin: 20vh auto 0 auto;
@@ -72,7 +57,7 @@ div.vertical-spacer-small {
   height: 100px;
 }
 
-#header {
+header {
     position:relative;
     position: fixed;
     top: 0;
@@ -84,26 +69,19 @@ div.vertical-spacer-small {
     background-image: linear-gradient(to left, lightgrey, white, rgba(0,0,0,0));
 }
 
-@media screen and (max-width: 700px) {
-  #header {
-    width: 100%;
-  }
-}
-
-#header.inview {
+header.inview {
   transition: width 1.2s ease, opacity 0.5s 0.3s;
   width: 100%;
   opacity: 1;
 }
 
-#header .tabs {
+header .tabs {
     position: absolute;
     bottom: 0;
     right: 0;
     display: block;
     padding-right: 20px;
 }
-
 
 .tab {
     position: relative;
@@ -210,31 +188,6 @@ div.vertical-spacer-small {
   border-color: silver;
 }
 
-#overlay {
-  position: absolute;
-  height: 100%;
-  width: 0;
-  left: 0;
-  opacity: 1;
-  animation: reveal 1s ease-in;
-}
-
-@keyframes reveal {
-  0% {
-    width: 0;
-  }
-
-  50% {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  100% {
-    margin-left: 100%;
-  }
-
-}
-
 #jumbo-header {
     position: relative;
     padding-left: 0;
@@ -262,7 +215,6 @@ div.vertical-spacer-small {
 	transform: scale(0);
 }
 
-/*animation effect*/
 .ink.animate {animation: ripple 1s;}
 
 .ink-2.animate {animation: ripple 1s;}
@@ -421,15 +373,7 @@ div.vertical-spacer-small {
     }
 }
 
-
-
-#main-img {
-    position: absolute;
-    width: 120%;
-    z-index: 0;
-}
-
-#mobile-spacer {
+.mobile-spacer {
   position: relative;
   width: 100%;
   height: 0;
@@ -441,19 +385,19 @@ div.vertical-spacer-small {
   }
 }
 
-#info {
+.info {
   position: relative;
   height: auto;
   width: 0;
   background-color: lightblue;
 }
 
-#info.slide {
+.info.slide {
   width: 100%;
   transition: 1s;
 }
 
-#info .animate-element {
+.info .animate-element {
   position: relative;
   z-index: 1;
   opacity: 0;
@@ -461,13 +405,13 @@ div.vertical-spacer-small {
   margin: 15px 0;
 }
 
-#info .animate-element.slide {
+.info .animate-element.slide {
   opacity: 1;
   transition: 1s;
   transition-delay: 0.5s;
 }
 
-#info .animate-element h1 {
+.info .animate-element h1 {
   font-family: "Simplifica", sans-serif;
   padding: 20px;
   width: 75%;
@@ -477,13 +421,43 @@ div.vertical-spacer-small {
   color: darkslategrey;
 }
 
+.info h1 {
+  font-family: "Simplifica", sans-serif;
+  padding: 20px;
+  width: 75%;
+  margin: auto;
+  font-size: 40px;
+  opacity: 1;
+  color: black;
+}
+
+.info h2, .info a {
+  font-family: "Simplifica", sans-serif;
+  padding: 20px;
+  width: 75%;
+  margin: auto;
+  font-size: 30px;
+  opacity: 1;
+  color: black;
+}
+
+.info a {
+  cursor: pointer;
+  color: blue;
+}
+
+.info a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 700px) {
   .animate-element h1 {
     font-size: 18px;
   }
 }
 
-#banners {
+.banners {
     position: relative;
     overflow-x: hidden;
     height: auto;
@@ -494,7 +468,7 @@ div.vertical-spacer-small {
     font-stretch: expanded;
 }
 
-#banners .banner-divider {
+.banners .banner-divider {
   width: 100%;
   border-style: solid;
   border-width: 5px 0 0 0;
@@ -503,12 +477,12 @@ div.vertical-spacer-small {
 }
 
 @media screen and (max-width: 700px) {
-  #banners .banner-divider {
+  .banners .banner-divider {
     margin-left: 10%;
   }
 }
 
-#banners h2 {
+.banners h2 {
     position: relative;
     float: left;
     font-family: "Lato", sans-serif;
@@ -519,11 +493,11 @@ div.vertical-spacer-small {
     box-shadow: 0 0 2px 2px lightgrey;
 }
 
-#banners .row {
+.banners .row {
     margin-top: 20px;
 }
 
-#banners .well {
+.banners .well {
     position: relative;
     float: left;
     background-image: linear-gradient(to bottom right, slategray, white, white);
@@ -537,13 +511,13 @@ div.vertical-spacer-small {
 }
 
 @media screen and (max-width: 700px) {
-  #banners .well {
+  .banners .well {
     margin-left: 10%;
   }
 }
 
 @media screen and (min-width: 700px) {
-  #banners .well:hover {
+  .banners .well:hover {
     z-index: 10;
     margin-left: 43%;
     margin-top: -3%;
@@ -553,13 +527,13 @@ div.vertical-spacer-small {
   }
 }
 
-#banners .details {
+.banners .details {
   display: inline-block;
   position: relative;
   width: 100%;
 }
 
-#banners h3 {
+.banners h3 {
     top: 0;
     padding-top: 0;
     padding-bottom: 30px;
@@ -570,7 +544,7 @@ div.vertical-spacer-small {
     color: ghostwhite;
 }
 
-#banners p {
+.banners p {
     float: left;
     font-family: "Raleway", sans-serif;
     font-stretch: semi-expanded;
@@ -580,21 +554,21 @@ div.vertical-spacer-small {
     margin-left: 10%;
 }
 
-#banners .spacer {
+.banners .spacer {
   width: 100%;
   margin: 50px 0 50px 0;
   border-style: solid;
   float: right;
 }
 
-#banners span {
+.banners span {
   float:right;
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   padding: 10px;
 }
 
-#banners a {
+.banners a {
     position: absolute;
     font-style: italic;
     font-size: 18px;
@@ -605,19 +579,19 @@ div.vertical-spacer-small {
     color: black;
 }
 
-#banners .animate-element {
+.banners .animate-element {
   opacity: 0;
   transform: translate3d(30%, 0, 0);
   perspective: 40px;
 }
 
-#banners .animate-element.slide {
+.banners .animate-element.slide {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: 0.5s ease-out;
 }
 
-#banners .animate-element img {
+.banners .animate-element img {
   width: 40%;
   margin-left: 5%;
   margin-right: 0;
@@ -630,14 +604,14 @@ div.vertical-spacer-small {
 }
 
 @media screen and (max-width: 700px) {
-  #banners .animate-element img {
+  .banners .animate-element img {
     position: relative;
     margin-bottom: 10px;
     width: 90%;
   }
 }
 
-#banners .animate-element img:hover {
+.banners .animate-element img:hover {
   width: 42%;
   top: -5%;
   margin-left: 10%;
@@ -647,7 +621,7 @@ div.vertical-spacer-small {
 }
 
 @media screen and (max-width: 700px) {
-  #banners .animate-element img:hover {
+  .banners .animate-element img:hover {
     width: 95%;
     top: 2%;
     margin-left: 0;
@@ -658,7 +632,7 @@ div.vertical-spacer-small {
   }
 }
 
-#contact {
+.contact {
   position: relative;
   float: left;
   height: auto;
@@ -666,12 +640,12 @@ div.vertical-spacer-small {
   background-color: lightblue;
 }
 
-#contact.slide {
+.contact.slide {
   width: 50%;
   transition: 1s;
 }
 
-#contact .animate-element {
+.contact .animate-element {
   position: relative;
   z-index: 1;
   opacity: 0;
@@ -679,13 +653,13 @@ div.vertical-spacer-small {
   margin: 15px 0;
 }
 
-#contact .animate-element.slide {
+.contact .animate-element.slide {
   opacity: 1;
   transition: 1s;
   transition-delay: 0.5s;
 }
 
-#contact .animate-element a, .animate-element h1 {
+.contact .animate-element a, .animate-element h1 {
   font-family: "Simplifica", sans-serif;
   padding: 20px;
   display: block;
@@ -730,7 +704,7 @@ div.vertical-spacer-small {
   color: darkslategrey;
 }
 
-#message-box {
+section.message-box {
   position: relative;
   float: left;
   left: 25%;
@@ -742,25 +716,25 @@ div.vertical-spacer-small {
   background-color: #f2f2f2;
 }
 
-#message-box h1 {
+section.message-box h1 {
   padding: 10px 0 40px 10px;
   font-family: "Simplifica";
 }
 
-#message-box .labels {
+section.message-box .labels {
   float: left;
   position: relative;
   text-align: right;
   width: 20%;
 }
 
-#message-box .inputs {
+section.message-box .inputs {
   float: left;
   position: relative;
   width: 80%;
 }
 
-.labels p {
+section.message-box .labels p {
   font-family: "Simplifica";
   font-size: 22px;
   padding-right: 15px;
@@ -768,7 +742,7 @@ div.vertical-spacer-small {
   display: block;
 }
 
-.inputs input[type=text] , .inputs textarea, .inputs select, .inputs option {
+input[type=text] , textarea, select, option {
   width: 100%;
   font-family: "Simplifica";
   font-size: 24px;
@@ -780,7 +754,7 @@ div.vertical-spacer-small {
   margin-bottom: 10px;
 }
 
-#message-box input[type=submit] {
+section.message-box input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
   color: white;
@@ -791,33 +765,6 @@ div.vertical-spacer-small {
   cursor: pointer;
 }
 
-#message-box input[type=submit]:hover {
+section.message-box input[type=submit]:hover {
   background-color: #45a049;
-}
-
-#footer {
-    color: ghostwhite;
-    position: relative;
-    height: 5%;
-    background-color: black;
-    opacity: 0.9;
-
-}
-
-#footer .group {
-    float: left;
-    padding: 40px 50px 20px 50px;
-}
-
-#footer .group h5 {
-    font-size: 18px;
-    font-family: "Roboto", sans-serif;
-    text-decoration: underline;
-}
-
-#footer span {
-    position: absolute;
-    padding: 5px;
-    bottom: 0;
-    right: 0;
 }
