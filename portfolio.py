@@ -1,32 +1,43 @@
-from flask import Flask, render_template, request
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-# set up the SMTP server
-s = smtplib.SMTP('smtp.gmail.com', 587)
-s.starttls()
-s.login('curbstonecoder@gmail.com', 'May.16.1996')
-
+from flask import Flask, render_template, request, redirect, url_for
+import json
+import datetime
+import calendar
+import send_info
 app = Flask(__name__)
 
+
 def send_details(request):
-	info = MIMEMultipart()
-	info['From'] = 'curbstonecoder@gmail.com'
-	info['To'] = 'tristanpowers74@gmail.com'
-	info['Subject'] = 'New Message'
-	name = request.form['name']
-	number = request.form['number']
-	details = request.form['details']
-	text = "Name: " + name + "\n" + "Number: " + number + "\n" + "Details: " + details + "\n"
-	body = MIMEText(text, "plain")
-	info.attach(body)
-	s.sendmail("curbstonecoder@gmail.com", "tristanpowers74@gmail.com", info.as_string())
+	name = request.form.get('name')
+	number = request.form.get('number')
+	email = request.form.get('email')
+	preferred_method = request.form.get('contact')
+	details = request.form.get('details')
+	message_time = datetime.datetime.now()
+	pretty_time = message_time.strftime("%A %B %d, %Y, at %I:%M %p")
+
+	with open("contacts.json", "r") as read_file:
+		file = json.load(read_file)
+	person = {
+		"Contact": {
+			"Name": name,
+			"Number": number,
+			"Email": email,
+			"Method": preferred_method,
+			"Details": details,
+			"Time": pretty_time
+		}
+	}
+	file.append(person)
+	with open("contacts.json", "w") as write_file:
+		json.dump(file, write_file, indent=4, sort_keys=False)
+	send_info.send_email(person)
+
 
 @app.route('/', methods=['POST'])
 def get_message():
 	if request.method == 'POST':
 		send_details(request)
-		return render_template('index.html')
+		return render_template('message_received.html')
 
 @app.route('/')
 def start_page():
@@ -56,6 +67,11 @@ def responsive_display():
 @app.route('/maintenance')
 def maintenance():
 	return render_template('maintenance.html')
+
+@app.route('/message_received', methods=['POST'])
+@app.route('/message_received')
+def message_received():
+	return render_template('message_received.html')
 
 if __name__ == '__main__':
 	app.run(debug = True)

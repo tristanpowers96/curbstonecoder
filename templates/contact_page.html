@@ -2,14 +2,7 @@
 
 {% block content %}
 
-<style>
-  .contact-info {
-    float: none;
-    margin: 10vh auto 10vh auto;
-  }
-</style>
-
-<div class="contact-info">
+<div class="contact-info" style="display: block;">
   <div class="buttons">
     <a href="https://www.facebook.com/tristan.powers.54"><img src="{{ url_for('static', filename='images/facebook.png') }}"></a>
     <a href="https://plus.google.com/108752414557703712355"><img src="{{ url_for('static', filename='images/google.png') }}"></a>
@@ -21,6 +14,8 @@
   <h1>Phone/text: 904-866-6418</h1>
   <h1>Facebook: https://www.facebook.com/tristan.powers.54</h1>
 </div>
+
+<div class="vertical-spacer-small"></div>
 {% endblock %}
 
 {% block scripts %}

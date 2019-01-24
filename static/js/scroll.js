@@ -1,6 +1,6 @@
 $(window).on("load", function() {
     setTimeout(function() {$('html, body').animate({
-       scrollTop: $("#jumbo-header").offset().top + $("#jumbo-header").outerHeight(true) - 200},
+       scrollTop: $("#jumbo-header").offset().top + $("#jumbo-header").outerHeight(true) - 100},
        200,
        "swing"
     )},

@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<div class="animate-element info">
+  <div class="animate-element">
+    <h1><strong>Message received!</strong></h1>
+    <p>Thanks for contacting me! I'll get back to you as soon as I can.</p>
+  </div>
+</div>
+
+<div class="vertical-spacer"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/scroll.js') }}"></script>
+{% endblock %}
