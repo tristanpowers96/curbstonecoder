@@ -1,5 +1,23 @@
 $(document).ready(function() {
 
+  $(".tab").click(function() {
+    if (!$(this).hasClass("hover")) {
+      $(this).toggleClass("hover");
+    }
+  })
+
+  $(".tab").hover(function() {
+    $(this).toggleClass("hover");
+  })
+
+  $(".content-box").hover(function() {
+    $(this).toggleClass("hover");
+  })
+
+  $(".tab-item").hover(function() {
+    $(this).toggleClass("hover");
+  })
+
   $(window).on("scroll", check_if_in_view);
 
   function check_if_in_view() {
