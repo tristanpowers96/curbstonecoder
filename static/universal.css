@@ -627,14 +627,16 @@ header .tabs {
 @media screen and (min-width: 700px) {
   .banners .animate-element {
     opacity: 0;
-    transform: translate3d(50%, 0, 0);
+    margin-right: 0;
+    margin-left: auto;
+    width: 0;
     will-change: opacity, transform;
   }
 
   .banners .animate-element.slide {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition: 0.5s ease-out;
+    width: 100%;
+    transition: 0.75s ease-out;
   }
 }
 
