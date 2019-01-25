@@ -18,6 +18,12 @@ $(document).ready(function() {
     $(this).toggleClass("hover");
   })
 
+  $(window).click(function() {
+      if ($(".tab").hasClass("hover")) {
+        $(".tab").removeClass("hover")
+      }
+  })
+
   $(window).on("scroll", check_if_in_view);
 
   function check_if_in_view() {
