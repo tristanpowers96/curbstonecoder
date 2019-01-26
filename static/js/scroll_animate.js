@@ -1,9 +1,8 @@
 $(document).ready(function() {
-
+/*
   $(".tab").click(function() {
     if (!$(this).hasClass("hover")) {
-      $(this).addClass("hover");
-      $(".content-box").trigger("mouseleave");
+      $(this).toggleClass("hover");
     }
   })
 
@@ -25,10 +24,7 @@ $(document).ready(function() {
       }
   })
 
-  function active(element) {
-    element.addClass("hover");
-  }
-
+*/
   $(window).on("scroll", check_if_in_view);
 
   function check_if_in_view() {
